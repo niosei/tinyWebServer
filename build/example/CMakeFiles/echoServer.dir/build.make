@@ -90,7 +90,7 @@ echoServer_EXTERNAL_OBJECTS =
 
 ../example/echoServer: example/CMakeFiles/echoServer.dir/echoServer.cc.o
 ../example/echoServer: example/CMakeFiles/echoServer.dir/build.make
-../example/echoServer: ../lib/libtiny_network.so
+../example/echoServer: ../lib/libtinyWebServer.so
 ../example/echoServer: example/CMakeFiles/echoServer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roushan/Project/tinyWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../example/echoServer"
 	cd /home/roushan/Project/tinyWebServer/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/echoServer.dir/link.txt --verbose=$(VERBOSE)

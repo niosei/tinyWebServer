@@ -90,7 +90,7 @@ MysqlPoolTest_EXTERNAL_OBJECTS =
 
 ../src/mysql/test/MysqlPoolTest: src/mysql/test/CMakeFiles/MysqlPoolTest.dir/MysqlPoolTest.cc.o
 ../src/mysql/test/MysqlPoolTest: src/mysql/test/CMakeFiles/MysqlPoolTest.dir/build.make
-../src/mysql/test/MysqlPoolTest: ../lib/libtiny_network.so
+../src/mysql/test/MysqlPoolTest: ../lib/libtinyWebServer.so
 ../src/mysql/test/MysqlPoolTest: src/mysql/test/CMakeFiles/MysqlPoolTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roushan/Project/tinyWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../src/mysql/test/MysqlPoolTest"
 	cd /home/roushan/Project/tinyWebServer/build/src/mysql/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MysqlPoolTest.dir/link.txt --verbose=$(VERBOSE)

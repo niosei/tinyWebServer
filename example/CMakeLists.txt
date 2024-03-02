@@ -10,6 +10,6 @@ add_executable(echoServerAsync echoServerAsync.cc)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/example)
 
-target_link_libraries(echoServer tiny_network)
-target_link_libraries(echoServerAsync tiny_network)
+target_link_libraries(echoServer tinyWebServer)
+target_link_libraries(echoServerAsync tinyWebServer)
 

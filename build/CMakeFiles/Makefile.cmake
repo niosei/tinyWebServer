@@ -124,7 +124,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/tiny_network.dir/DependInfo.cmake"
+  "CMakeFiles/tinyWebServer.dir/DependInfo.cmake"
   "example/CMakeFiles/echoServerAsync.dir/DependInfo.cmake"
   "example/CMakeFiles/echoServer.dir/DependInfo.cmake"
   "src/http/CMakeFiles/HttpServer.dir/DependInfo.cmake"

@@ -90,7 +90,7 @@ MemoryPoolTest_EXTERNAL_OBJECTS =
 
 ../src/memory/test/MemoryPoolTest: src/memory/test/CMakeFiles/MemoryPoolTest.dir/MemoryPoolTest.cc.o
 ../src/memory/test/MemoryPoolTest: src/memory/test/CMakeFiles/MemoryPoolTest.dir/build.make
-../src/memory/test/MemoryPoolTest: ../lib/libtiny_network.so
+../src/memory/test/MemoryPoolTest: ../lib/libtinyWebServer.so
 ../src/memory/test/MemoryPoolTest: src/memory/test/CMakeFiles/MemoryPoolTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roushan/Project/tinyWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../src/memory/test/MemoryPoolTest"
 	cd /home/roushan/Project/tinyWebServer/build/src/memory/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MemoryPoolTest.dir/link.txt --verbose=$(VERBOSE)

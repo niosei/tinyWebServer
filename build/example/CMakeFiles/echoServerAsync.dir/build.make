@@ -90,7 +90,7 @@ echoServerAsync_EXTERNAL_OBJECTS =
 
 ../example/echoServerAsync: example/CMakeFiles/echoServerAsync.dir/echoServerAsync.cc.o
 ../example/echoServerAsync: example/CMakeFiles/echoServerAsync.dir/build.make
-../example/echoServerAsync: ../lib/libtiny_network.so
+../example/echoServerAsync: ../lib/libtinyWebServer.so
 ../example/echoServerAsync: example/CMakeFiles/echoServerAsync.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roushan/Project/tinyWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../example/echoServerAsync"
 	cd /home/roushan/Project/tinyWebServer/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/echoServerAsync.dir/link.txt --verbose=$(VERBOSE)

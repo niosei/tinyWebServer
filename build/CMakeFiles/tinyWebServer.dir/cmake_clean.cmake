@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/tinyWebServer.dir/src/base/CurrentThread.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/base/Thread.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/base/ThreadPool.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/base/Timestamp.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/Acceptor.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/Buffer.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/Channel.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/EventLoop.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/EventLoopThread.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/EventLoopThreadPool.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/InetAddress.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/Socket.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/TcpConnection.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/TcpServer.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/poller/DefaultPoller.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/poller/EPollPoller.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/net/poller/Poller.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/timer/Timer.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/timer/TimerQueue.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/logger/AsyncLogging.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/logger/FileUtil.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/logger/LogFile.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/logger/LogStream.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/logger/Logging.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/http/HttpContext.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/http/HttpResponse.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/http/HttpServer.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/http/main.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/memory/MemoryPool.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/mysql/ConnectionPool.cc.o"
+  "CMakeFiles/tinyWebServer.dir/src/mysql/MysqlConn.cc.o"
+  "../lib/libtinyWebServer.pdb"
+  "../lib/libtinyWebServer.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/tinyWebServer.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

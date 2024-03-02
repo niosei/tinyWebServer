@@ -79,18 +79,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -123,6 +111,18 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -157,17 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tiny_network
+# Target rules for targets named tinyWebServer
 
 # Build rule for target.
-tiny_network: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tiny_network
-.PHONY : tiny_network
+tinyWebServer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tinyWebServer
+.PHONY : tinyWebServer
 
 # fast build rule for target.
-tiny_network/fast:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/build
-.PHONY : tiny_network/fast
+tinyWebServer/fast:
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/build
+.PHONY : tinyWebServer/fast
 
 #=============================================================================
 # Target rules for targets named echoServerAsync
@@ -253,7 +253,7 @@ src/base/CurrentThread.o: src/base/CurrentThread.cc.o
 
 # target to build an object file
 src/base/CurrentThread.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/CurrentThread.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/CurrentThread.cc.o
 .PHONY : src/base/CurrentThread.cc.o
 
 src/base/CurrentThread.i: src/base/CurrentThread.cc.i
@@ -262,7 +262,7 @@ src/base/CurrentThread.i: src/base/CurrentThread.cc.i
 
 # target to preprocess a source file
 src/base/CurrentThread.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/CurrentThread.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/CurrentThread.cc.i
 .PHONY : src/base/CurrentThread.cc.i
 
 src/base/CurrentThread.s: src/base/CurrentThread.cc.s
@@ -271,7 +271,7 @@ src/base/CurrentThread.s: src/base/CurrentThread.cc.s
 
 # target to generate assembly for a file
 src/base/CurrentThread.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/CurrentThread.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/CurrentThread.cc.s
 .PHONY : src/base/CurrentThread.cc.s
 
 src/base/Thread.o: src/base/Thread.cc.o
@@ -280,7 +280,7 @@ src/base/Thread.o: src/base/Thread.cc.o
 
 # target to build an object file
 src/base/Thread.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/Thread.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/Thread.cc.o
 .PHONY : src/base/Thread.cc.o
 
 src/base/Thread.i: src/base/Thread.cc.i
@@ -289,7 +289,7 @@ src/base/Thread.i: src/base/Thread.cc.i
 
 # target to preprocess a source file
 src/base/Thread.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/Thread.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/Thread.cc.i
 .PHONY : src/base/Thread.cc.i
 
 src/base/Thread.s: src/base/Thread.cc.s
@@ -298,7 +298,7 @@ src/base/Thread.s: src/base/Thread.cc.s
 
 # target to generate assembly for a file
 src/base/Thread.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/Thread.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/Thread.cc.s
 .PHONY : src/base/Thread.cc.s
 
 src/base/ThreadPool.o: src/base/ThreadPool.cc.o
@@ -307,7 +307,7 @@ src/base/ThreadPool.o: src/base/ThreadPool.cc.o
 
 # target to build an object file
 src/base/ThreadPool.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/ThreadPool.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/ThreadPool.cc.o
 .PHONY : src/base/ThreadPool.cc.o
 
 src/base/ThreadPool.i: src/base/ThreadPool.cc.i
@@ -316,7 +316,7 @@ src/base/ThreadPool.i: src/base/ThreadPool.cc.i
 
 # target to preprocess a source file
 src/base/ThreadPool.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/ThreadPool.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/ThreadPool.cc.i
 .PHONY : src/base/ThreadPool.cc.i
 
 src/base/ThreadPool.s: src/base/ThreadPool.cc.s
@@ -325,7 +325,7 @@ src/base/ThreadPool.s: src/base/ThreadPool.cc.s
 
 # target to generate assembly for a file
 src/base/ThreadPool.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/ThreadPool.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/ThreadPool.cc.s
 .PHONY : src/base/ThreadPool.cc.s
 
 src/base/Timestamp.o: src/base/Timestamp.cc.o
@@ -334,7 +334,7 @@ src/base/Timestamp.o: src/base/Timestamp.cc.o
 
 # target to build an object file
 src/base/Timestamp.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/Timestamp.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/Timestamp.cc.o
 .PHONY : src/base/Timestamp.cc.o
 
 src/base/Timestamp.i: src/base/Timestamp.cc.i
@@ -343,7 +343,7 @@ src/base/Timestamp.i: src/base/Timestamp.cc.i
 
 # target to preprocess a source file
 src/base/Timestamp.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/Timestamp.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/Timestamp.cc.i
 .PHONY : src/base/Timestamp.cc.i
 
 src/base/Timestamp.s: src/base/Timestamp.cc.s
@@ -352,7 +352,7 @@ src/base/Timestamp.s: src/base/Timestamp.cc.s
 
 # target to generate assembly for a file
 src/base/Timestamp.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/base/Timestamp.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/base/Timestamp.cc.s
 .PHONY : src/base/Timestamp.cc.s
 
 src/http/HttpContext.o: src/http/HttpContext.cc.o
@@ -361,7 +361,7 @@ src/http/HttpContext.o: src/http/HttpContext.cc.o
 
 # target to build an object file
 src/http/HttpContext.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpContext.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpContext.cc.o
 .PHONY : src/http/HttpContext.cc.o
 
 src/http/HttpContext.i: src/http/HttpContext.cc.i
@@ -370,7 +370,7 @@ src/http/HttpContext.i: src/http/HttpContext.cc.i
 
 # target to preprocess a source file
 src/http/HttpContext.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpContext.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpContext.cc.i
 .PHONY : src/http/HttpContext.cc.i
 
 src/http/HttpContext.s: src/http/HttpContext.cc.s
@@ -379,7 +379,7 @@ src/http/HttpContext.s: src/http/HttpContext.cc.s
 
 # target to generate assembly for a file
 src/http/HttpContext.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpContext.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpContext.cc.s
 .PHONY : src/http/HttpContext.cc.s
 
 src/http/HttpResponse.o: src/http/HttpResponse.cc.o
@@ -388,7 +388,7 @@ src/http/HttpResponse.o: src/http/HttpResponse.cc.o
 
 # target to build an object file
 src/http/HttpResponse.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpResponse.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpResponse.cc.o
 .PHONY : src/http/HttpResponse.cc.o
 
 src/http/HttpResponse.i: src/http/HttpResponse.cc.i
@@ -397,7 +397,7 @@ src/http/HttpResponse.i: src/http/HttpResponse.cc.i
 
 # target to preprocess a source file
 src/http/HttpResponse.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpResponse.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpResponse.cc.i
 .PHONY : src/http/HttpResponse.cc.i
 
 src/http/HttpResponse.s: src/http/HttpResponse.cc.s
@@ -406,7 +406,7 @@ src/http/HttpResponse.s: src/http/HttpResponse.cc.s
 
 # target to generate assembly for a file
 src/http/HttpResponse.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpResponse.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpResponse.cc.s
 .PHONY : src/http/HttpResponse.cc.s
 
 src/http/HttpServer.o: src/http/HttpServer.cc.o
@@ -415,7 +415,7 @@ src/http/HttpServer.o: src/http/HttpServer.cc.o
 
 # target to build an object file
 src/http/HttpServer.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpServer.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpServer.cc.o
 .PHONY : src/http/HttpServer.cc.o
 
 src/http/HttpServer.i: src/http/HttpServer.cc.i
@@ -424,7 +424,7 @@ src/http/HttpServer.i: src/http/HttpServer.cc.i
 
 # target to preprocess a source file
 src/http/HttpServer.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpServer.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpServer.cc.i
 .PHONY : src/http/HttpServer.cc.i
 
 src/http/HttpServer.s: src/http/HttpServer.cc.s
@@ -433,7 +433,7 @@ src/http/HttpServer.s: src/http/HttpServer.cc.s
 
 # target to generate assembly for a file
 src/http/HttpServer.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/HttpServer.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/HttpServer.cc.s
 .PHONY : src/http/HttpServer.cc.s
 
 src/http/main.o: src/http/main.cc.o
@@ -442,7 +442,7 @@ src/http/main.o: src/http/main.cc.o
 
 # target to build an object file
 src/http/main.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/main.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/main.cc.o
 .PHONY : src/http/main.cc.o
 
 src/http/main.i: src/http/main.cc.i
@@ -451,7 +451,7 @@ src/http/main.i: src/http/main.cc.i
 
 # target to preprocess a source file
 src/http/main.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/main.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/main.cc.i
 .PHONY : src/http/main.cc.i
 
 src/http/main.s: src/http/main.cc.s
@@ -460,7 +460,7 @@ src/http/main.s: src/http/main.cc.s
 
 # target to generate assembly for a file
 src/http/main.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/http/main.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/http/main.cc.s
 .PHONY : src/http/main.cc.s
 
 src/logger/AsyncLogging.o: src/logger/AsyncLogging.cc.o
@@ -469,7 +469,7 @@ src/logger/AsyncLogging.o: src/logger/AsyncLogging.cc.o
 
 # target to build an object file
 src/logger/AsyncLogging.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/AsyncLogging.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/AsyncLogging.cc.o
 .PHONY : src/logger/AsyncLogging.cc.o
 
 src/logger/AsyncLogging.i: src/logger/AsyncLogging.cc.i
@@ -478,7 +478,7 @@ src/logger/AsyncLogging.i: src/logger/AsyncLogging.cc.i
 
 # target to preprocess a source file
 src/logger/AsyncLogging.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/AsyncLogging.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/AsyncLogging.cc.i
 .PHONY : src/logger/AsyncLogging.cc.i
 
 src/logger/AsyncLogging.s: src/logger/AsyncLogging.cc.s
@@ -487,7 +487,7 @@ src/logger/AsyncLogging.s: src/logger/AsyncLogging.cc.s
 
 # target to generate assembly for a file
 src/logger/AsyncLogging.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/AsyncLogging.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/AsyncLogging.cc.s
 .PHONY : src/logger/AsyncLogging.cc.s
 
 src/logger/FileUtil.o: src/logger/FileUtil.cc.o
@@ -496,7 +496,7 @@ src/logger/FileUtil.o: src/logger/FileUtil.cc.o
 
 # target to build an object file
 src/logger/FileUtil.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/FileUtil.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/FileUtil.cc.o
 .PHONY : src/logger/FileUtil.cc.o
 
 src/logger/FileUtil.i: src/logger/FileUtil.cc.i
@@ -505,7 +505,7 @@ src/logger/FileUtil.i: src/logger/FileUtil.cc.i
 
 # target to preprocess a source file
 src/logger/FileUtil.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/FileUtil.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/FileUtil.cc.i
 .PHONY : src/logger/FileUtil.cc.i
 
 src/logger/FileUtil.s: src/logger/FileUtil.cc.s
@@ -514,7 +514,7 @@ src/logger/FileUtil.s: src/logger/FileUtil.cc.s
 
 # target to generate assembly for a file
 src/logger/FileUtil.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/FileUtil.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/FileUtil.cc.s
 .PHONY : src/logger/FileUtil.cc.s
 
 src/logger/LogFile.o: src/logger/LogFile.cc.o
@@ -523,7 +523,7 @@ src/logger/LogFile.o: src/logger/LogFile.cc.o
 
 # target to build an object file
 src/logger/LogFile.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/LogFile.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/LogFile.cc.o
 .PHONY : src/logger/LogFile.cc.o
 
 src/logger/LogFile.i: src/logger/LogFile.cc.i
@@ -532,7 +532,7 @@ src/logger/LogFile.i: src/logger/LogFile.cc.i
 
 # target to preprocess a source file
 src/logger/LogFile.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/LogFile.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/LogFile.cc.i
 .PHONY : src/logger/LogFile.cc.i
 
 src/logger/LogFile.s: src/logger/LogFile.cc.s
@@ -541,7 +541,7 @@ src/logger/LogFile.s: src/logger/LogFile.cc.s
 
 # target to generate assembly for a file
 src/logger/LogFile.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/LogFile.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/LogFile.cc.s
 .PHONY : src/logger/LogFile.cc.s
 
 src/logger/LogStream.o: src/logger/LogStream.cc.o
@@ -550,7 +550,7 @@ src/logger/LogStream.o: src/logger/LogStream.cc.o
 
 # target to build an object file
 src/logger/LogStream.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/LogStream.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/LogStream.cc.o
 .PHONY : src/logger/LogStream.cc.o
 
 src/logger/LogStream.i: src/logger/LogStream.cc.i
@@ -559,7 +559,7 @@ src/logger/LogStream.i: src/logger/LogStream.cc.i
 
 # target to preprocess a source file
 src/logger/LogStream.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/LogStream.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/LogStream.cc.i
 .PHONY : src/logger/LogStream.cc.i
 
 src/logger/LogStream.s: src/logger/LogStream.cc.s
@@ -568,7 +568,7 @@ src/logger/LogStream.s: src/logger/LogStream.cc.s
 
 # target to generate assembly for a file
 src/logger/LogStream.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/LogStream.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/LogStream.cc.s
 .PHONY : src/logger/LogStream.cc.s
 
 src/logger/Logging.o: src/logger/Logging.cc.o
@@ -577,7 +577,7 @@ src/logger/Logging.o: src/logger/Logging.cc.o
 
 # target to build an object file
 src/logger/Logging.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/Logging.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/Logging.cc.o
 .PHONY : src/logger/Logging.cc.o
 
 src/logger/Logging.i: src/logger/Logging.cc.i
@@ -586,7 +586,7 @@ src/logger/Logging.i: src/logger/Logging.cc.i
 
 # target to preprocess a source file
 src/logger/Logging.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/Logging.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/Logging.cc.i
 .PHONY : src/logger/Logging.cc.i
 
 src/logger/Logging.s: src/logger/Logging.cc.s
@@ -595,7 +595,7 @@ src/logger/Logging.s: src/logger/Logging.cc.s
 
 # target to generate assembly for a file
 src/logger/Logging.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/logger/Logging.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/logger/Logging.cc.s
 .PHONY : src/logger/Logging.cc.s
 
 src/memory/MemoryPool.o: src/memory/MemoryPool.cc.o
@@ -604,7 +604,7 @@ src/memory/MemoryPool.o: src/memory/MemoryPool.cc.o
 
 # target to build an object file
 src/memory/MemoryPool.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/memory/MemoryPool.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/memory/MemoryPool.cc.o
 .PHONY : src/memory/MemoryPool.cc.o
 
 src/memory/MemoryPool.i: src/memory/MemoryPool.cc.i
@@ -613,7 +613,7 @@ src/memory/MemoryPool.i: src/memory/MemoryPool.cc.i
 
 # target to preprocess a source file
 src/memory/MemoryPool.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/memory/MemoryPool.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/memory/MemoryPool.cc.i
 .PHONY : src/memory/MemoryPool.cc.i
 
 src/memory/MemoryPool.s: src/memory/MemoryPool.cc.s
@@ -622,7 +622,7 @@ src/memory/MemoryPool.s: src/memory/MemoryPool.cc.s
 
 # target to generate assembly for a file
 src/memory/MemoryPool.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/memory/MemoryPool.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/memory/MemoryPool.cc.s
 .PHONY : src/memory/MemoryPool.cc.s
 
 src/mysql/ConnectionPool.o: src/mysql/ConnectionPool.cc.o
@@ -631,7 +631,7 @@ src/mysql/ConnectionPool.o: src/mysql/ConnectionPool.cc.o
 
 # target to build an object file
 src/mysql/ConnectionPool.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/mysql/ConnectionPool.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/mysql/ConnectionPool.cc.o
 .PHONY : src/mysql/ConnectionPool.cc.o
 
 src/mysql/ConnectionPool.i: src/mysql/ConnectionPool.cc.i
@@ -640,7 +640,7 @@ src/mysql/ConnectionPool.i: src/mysql/ConnectionPool.cc.i
 
 # target to preprocess a source file
 src/mysql/ConnectionPool.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/mysql/ConnectionPool.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/mysql/ConnectionPool.cc.i
 .PHONY : src/mysql/ConnectionPool.cc.i
 
 src/mysql/ConnectionPool.s: src/mysql/ConnectionPool.cc.s
@@ -649,7 +649,7 @@ src/mysql/ConnectionPool.s: src/mysql/ConnectionPool.cc.s
 
 # target to generate assembly for a file
 src/mysql/ConnectionPool.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/mysql/ConnectionPool.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/mysql/ConnectionPool.cc.s
 .PHONY : src/mysql/ConnectionPool.cc.s
 
 src/mysql/MysqlConn.o: src/mysql/MysqlConn.cc.o
@@ -658,7 +658,7 @@ src/mysql/MysqlConn.o: src/mysql/MysqlConn.cc.o
 
 # target to build an object file
 src/mysql/MysqlConn.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/mysql/MysqlConn.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/mysql/MysqlConn.cc.o
 .PHONY : src/mysql/MysqlConn.cc.o
 
 src/mysql/MysqlConn.i: src/mysql/MysqlConn.cc.i
@@ -667,7 +667,7 @@ src/mysql/MysqlConn.i: src/mysql/MysqlConn.cc.i
 
 # target to preprocess a source file
 src/mysql/MysqlConn.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/mysql/MysqlConn.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/mysql/MysqlConn.cc.i
 .PHONY : src/mysql/MysqlConn.cc.i
 
 src/mysql/MysqlConn.s: src/mysql/MysqlConn.cc.s
@@ -676,7 +676,7 @@ src/mysql/MysqlConn.s: src/mysql/MysqlConn.cc.s
 
 # target to generate assembly for a file
 src/mysql/MysqlConn.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/mysql/MysqlConn.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/mysql/MysqlConn.cc.s
 .PHONY : src/mysql/MysqlConn.cc.s
 
 src/net/Acceptor.o: src/net/Acceptor.cc.o
@@ -685,7 +685,7 @@ src/net/Acceptor.o: src/net/Acceptor.cc.o
 
 # target to build an object file
 src/net/Acceptor.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Acceptor.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Acceptor.cc.o
 .PHONY : src/net/Acceptor.cc.o
 
 src/net/Acceptor.i: src/net/Acceptor.cc.i
@@ -694,7 +694,7 @@ src/net/Acceptor.i: src/net/Acceptor.cc.i
 
 # target to preprocess a source file
 src/net/Acceptor.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Acceptor.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Acceptor.cc.i
 .PHONY : src/net/Acceptor.cc.i
 
 src/net/Acceptor.s: src/net/Acceptor.cc.s
@@ -703,7 +703,7 @@ src/net/Acceptor.s: src/net/Acceptor.cc.s
 
 # target to generate assembly for a file
 src/net/Acceptor.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Acceptor.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Acceptor.cc.s
 .PHONY : src/net/Acceptor.cc.s
 
 src/net/Buffer.o: src/net/Buffer.cc.o
@@ -712,7 +712,7 @@ src/net/Buffer.o: src/net/Buffer.cc.o
 
 # target to build an object file
 src/net/Buffer.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Buffer.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Buffer.cc.o
 .PHONY : src/net/Buffer.cc.o
 
 src/net/Buffer.i: src/net/Buffer.cc.i
@@ -721,7 +721,7 @@ src/net/Buffer.i: src/net/Buffer.cc.i
 
 # target to preprocess a source file
 src/net/Buffer.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Buffer.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Buffer.cc.i
 .PHONY : src/net/Buffer.cc.i
 
 src/net/Buffer.s: src/net/Buffer.cc.s
@@ -730,7 +730,7 @@ src/net/Buffer.s: src/net/Buffer.cc.s
 
 # target to generate assembly for a file
 src/net/Buffer.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Buffer.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Buffer.cc.s
 .PHONY : src/net/Buffer.cc.s
 
 src/net/Channel.o: src/net/Channel.cc.o
@@ -739,7 +739,7 @@ src/net/Channel.o: src/net/Channel.cc.o
 
 # target to build an object file
 src/net/Channel.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Channel.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Channel.cc.o
 .PHONY : src/net/Channel.cc.o
 
 src/net/Channel.i: src/net/Channel.cc.i
@@ -748,7 +748,7 @@ src/net/Channel.i: src/net/Channel.cc.i
 
 # target to preprocess a source file
 src/net/Channel.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Channel.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Channel.cc.i
 .PHONY : src/net/Channel.cc.i
 
 src/net/Channel.s: src/net/Channel.cc.s
@@ -757,7 +757,7 @@ src/net/Channel.s: src/net/Channel.cc.s
 
 # target to generate assembly for a file
 src/net/Channel.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Channel.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Channel.cc.s
 .PHONY : src/net/Channel.cc.s
 
 src/net/EventLoop.o: src/net/EventLoop.cc.o
@@ -766,7 +766,7 @@ src/net/EventLoop.o: src/net/EventLoop.cc.o
 
 # target to build an object file
 src/net/EventLoop.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoop.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoop.cc.o
 .PHONY : src/net/EventLoop.cc.o
 
 src/net/EventLoop.i: src/net/EventLoop.cc.i
@@ -775,7 +775,7 @@ src/net/EventLoop.i: src/net/EventLoop.cc.i
 
 # target to preprocess a source file
 src/net/EventLoop.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoop.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoop.cc.i
 .PHONY : src/net/EventLoop.cc.i
 
 src/net/EventLoop.s: src/net/EventLoop.cc.s
@@ -784,7 +784,7 @@ src/net/EventLoop.s: src/net/EventLoop.cc.s
 
 # target to generate assembly for a file
 src/net/EventLoop.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoop.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoop.cc.s
 .PHONY : src/net/EventLoop.cc.s
 
 src/net/EventLoopThread.o: src/net/EventLoopThread.cc.o
@@ -793,7 +793,7 @@ src/net/EventLoopThread.o: src/net/EventLoopThread.cc.o
 
 # target to build an object file
 src/net/EventLoopThread.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoopThread.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoopThread.cc.o
 .PHONY : src/net/EventLoopThread.cc.o
 
 src/net/EventLoopThread.i: src/net/EventLoopThread.cc.i
@@ -802,7 +802,7 @@ src/net/EventLoopThread.i: src/net/EventLoopThread.cc.i
 
 # target to preprocess a source file
 src/net/EventLoopThread.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoopThread.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoopThread.cc.i
 .PHONY : src/net/EventLoopThread.cc.i
 
 src/net/EventLoopThread.s: src/net/EventLoopThread.cc.s
@@ -811,7 +811,7 @@ src/net/EventLoopThread.s: src/net/EventLoopThread.cc.s
 
 # target to generate assembly for a file
 src/net/EventLoopThread.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoopThread.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoopThread.cc.s
 .PHONY : src/net/EventLoopThread.cc.s
 
 src/net/EventLoopThreadPool.o: src/net/EventLoopThreadPool.cc.o
@@ -820,7 +820,7 @@ src/net/EventLoopThreadPool.o: src/net/EventLoopThreadPool.cc.o
 
 # target to build an object file
 src/net/EventLoopThreadPool.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoopThreadPool.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoopThreadPool.cc.o
 .PHONY : src/net/EventLoopThreadPool.cc.o
 
 src/net/EventLoopThreadPool.i: src/net/EventLoopThreadPool.cc.i
@@ -829,7 +829,7 @@ src/net/EventLoopThreadPool.i: src/net/EventLoopThreadPool.cc.i
 
 # target to preprocess a source file
 src/net/EventLoopThreadPool.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoopThreadPool.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoopThreadPool.cc.i
 .PHONY : src/net/EventLoopThreadPool.cc.i
 
 src/net/EventLoopThreadPool.s: src/net/EventLoopThreadPool.cc.s
@@ -838,7 +838,7 @@ src/net/EventLoopThreadPool.s: src/net/EventLoopThreadPool.cc.s
 
 # target to generate assembly for a file
 src/net/EventLoopThreadPool.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/EventLoopThreadPool.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/EventLoopThreadPool.cc.s
 .PHONY : src/net/EventLoopThreadPool.cc.s
 
 src/net/InetAddress.o: src/net/InetAddress.cc.o
@@ -847,7 +847,7 @@ src/net/InetAddress.o: src/net/InetAddress.cc.o
 
 # target to build an object file
 src/net/InetAddress.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/InetAddress.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/InetAddress.cc.o
 .PHONY : src/net/InetAddress.cc.o
 
 src/net/InetAddress.i: src/net/InetAddress.cc.i
@@ -856,7 +856,7 @@ src/net/InetAddress.i: src/net/InetAddress.cc.i
 
 # target to preprocess a source file
 src/net/InetAddress.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/InetAddress.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/InetAddress.cc.i
 .PHONY : src/net/InetAddress.cc.i
 
 src/net/InetAddress.s: src/net/InetAddress.cc.s
@@ -865,7 +865,7 @@ src/net/InetAddress.s: src/net/InetAddress.cc.s
 
 # target to generate assembly for a file
 src/net/InetAddress.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/InetAddress.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/InetAddress.cc.s
 .PHONY : src/net/InetAddress.cc.s
 
 src/net/Socket.o: src/net/Socket.cc.o
@@ -874,7 +874,7 @@ src/net/Socket.o: src/net/Socket.cc.o
 
 # target to build an object file
 src/net/Socket.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Socket.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Socket.cc.o
 .PHONY : src/net/Socket.cc.o
 
 src/net/Socket.i: src/net/Socket.cc.i
@@ -883,7 +883,7 @@ src/net/Socket.i: src/net/Socket.cc.i
 
 # target to preprocess a source file
 src/net/Socket.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Socket.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Socket.cc.i
 .PHONY : src/net/Socket.cc.i
 
 src/net/Socket.s: src/net/Socket.cc.s
@@ -892,7 +892,7 @@ src/net/Socket.s: src/net/Socket.cc.s
 
 # target to generate assembly for a file
 src/net/Socket.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/Socket.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/Socket.cc.s
 .PHONY : src/net/Socket.cc.s
 
 src/net/TcpConnection.o: src/net/TcpConnection.cc.o
@@ -901,7 +901,7 @@ src/net/TcpConnection.o: src/net/TcpConnection.cc.o
 
 # target to build an object file
 src/net/TcpConnection.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/TcpConnection.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/TcpConnection.cc.o
 .PHONY : src/net/TcpConnection.cc.o
 
 src/net/TcpConnection.i: src/net/TcpConnection.cc.i
@@ -910,7 +910,7 @@ src/net/TcpConnection.i: src/net/TcpConnection.cc.i
 
 # target to preprocess a source file
 src/net/TcpConnection.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/TcpConnection.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/TcpConnection.cc.i
 .PHONY : src/net/TcpConnection.cc.i
 
 src/net/TcpConnection.s: src/net/TcpConnection.cc.s
@@ -919,7 +919,7 @@ src/net/TcpConnection.s: src/net/TcpConnection.cc.s
 
 # target to generate assembly for a file
 src/net/TcpConnection.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/TcpConnection.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/TcpConnection.cc.s
 .PHONY : src/net/TcpConnection.cc.s
 
 src/net/TcpServer.o: src/net/TcpServer.cc.o
@@ -928,7 +928,7 @@ src/net/TcpServer.o: src/net/TcpServer.cc.o
 
 # target to build an object file
 src/net/TcpServer.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/TcpServer.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/TcpServer.cc.o
 .PHONY : src/net/TcpServer.cc.o
 
 src/net/TcpServer.i: src/net/TcpServer.cc.i
@@ -937,7 +937,7 @@ src/net/TcpServer.i: src/net/TcpServer.cc.i
 
 # target to preprocess a source file
 src/net/TcpServer.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/TcpServer.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/TcpServer.cc.i
 .PHONY : src/net/TcpServer.cc.i
 
 src/net/TcpServer.s: src/net/TcpServer.cc.s
@@ -946,7 +946,7 @@ src/net/TcpServer.s: src/net/TcpServer.cc.s
 
 # target to generate assembly for a file
 src/net/TcpServer.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/TcpServer.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/TcpServer.cc.s
 .PHONY : src/net/TcpServer.cc.s
 
 src/net/poller/DefaultPoller.o: src/net/poller/DefaultPoller.cc.o
@@ -955,7 +955,7 @@ src/net/poller/DefaultPoller.o: src/net/poller/DefaultPoller.cc.o
 
 # target to build an object file
 src/net/poller/DefaultPoller.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/DefaultPoller.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/DefaultPoller.cc.o
 .PHONY : src/net/poller/DefaultPoller.cc.o
 
 src/net/poller/DefaultPoller.i: src/net/poller/DefaultPoller.cc.i
@@ -964,7 +964,7 @@ src/net/poller/DefaultPoller.i: src/net/poller/DefaultPoller.cc.i
 
 # target to preprocess a source file
 src/net/poller/DefaultPoller.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/DefaultPoller.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/DefaultPoller.cc.i
 .PHONY : src/net/poller/DefaultPoller.cc.i
 
 src/net/poller/DefaultPoller.s: src/net/poller/DefaultPoller.cc.s
@@ -973,7 +973,7 @@ src/net/poller/DefaultPoller.s: src/net/poller/DefaultPoller.cc.s
 
 # target to generate assembly for a file
 src/net/poller/DefaultPoller.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/DefaultPoller.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/DefaultPoller.cc.s
 .PHONY : src/net/poller/DefaultPoller.cc.s
 
 src/net/poller/EPollPoller.o: src/net/poller/EPollPoller.cc.o
@@ -982,7 +982,7 @@ src/net/poller/EPollPoller.o: src/net/poller/EPollPoller.cc.o
 
 # target to build an object file
 src/net/poller/EPollPoller.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/EPollPoller.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/EPollPoller.cc.o
 .PHONY : src/net/poller/EPollPoller.cc.o
 
 src/net/poller/EPollPoller.i: src/net/poller/EPollPoller.cc.i
@@ -991,7 +991,7 @@ src/net/poller/EPollPoller.i: src/net/poller/EPollPoller.cc.i
 
 # target to preprocess a source file
 src/net/poller/EPollPoller.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/EPollPoller.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/EPollPoller.cc.i
 .PHONY : src/net/poller/EPollPoller.cc.i
 
 src/net/poller/EPollPoller.s: src/net/poller/EPollPoller.cc.s
@@ -1000,7 +1000,7 @@ src/net/poller/EPollPoller.s: src/net/poller/EPollPoller.cc.s
 
 # target to generate assembly for a file
 src/net/poller/EPollPoller.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/EPollPoller.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/EPollPoller.cc.s
 .PHONY : src/net/poller/EPollPoller.cc.s
 
 src/net/poller/Poller.o: src/net/poller/Poller.cc.o
@@ -1009,7 +1009,7 @@ src/net/poller/Poller.o: src/net/poller/Poller.cc.o
 
 # target to build an object file
 src/net/poller/Poller.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/Poller.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/Poller.cc.o
 .PHONY : src/net/poller/Poller.cc.o
 
 src/net/poller/Poller.i: src/net/poller/Poller.cc.i
@@ -1018,7 +1018,7 @@ src/net/poller/Poller.i: src/net/poller/Poller.cc.i
 
 # target to preprocess a source file
 src/net/poller/Poller.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/Poller.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/Poller.cc.i
 .PHONY : src/net/poller/Poller.cc.i
 
 src/net/poller/Poller.s: src/net/poller/Poller.cc.s
@@ -1027,7 +1027,7 @@ src/net/poller/Poller.s: src/net/poller/Poller.cc.s
 
 # target to generate assembly for a file
 src/net/poller/Poller.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/net/poller/Poller.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/net/poller/Poller.cc.s
 .PHONY : src/net/poller/Poller.cc.s
 
 src/timer/Timer.o: src/timer/Timer.cc.o
@@ -1036,7 +1036,7 @@ src/timer/Timer.o: src/timer/Timer.cc.o
 
 # target to build an object file
 src/timer/Timer.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/timer/Timer.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/timer/Timer.cc.o
 .PHONY : src/timer/Timer.cc.o
 
 src/timer/Timer.i: src/timer/Timer.cc.i
@@ -1045,7 +1045,7 @@ src/timer/Timer.i: src/timer/Timer.cc.i
 
 # target to preprocess a source file
 src/timer/Timer.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/timer/Timer.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/timer/Timer.cc.i
 .PHONY : src/timer/Timer.cc.i
 
 src/timer/Timer.s: src/timer/Timer.cc.s
@@ -1054,7 +1054,7 @@ src/timer/Timer.s: src/timer/Timer.cc.s
 
 # target to generate assembly for a file
 src/timer/Timer.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/timer/Timer.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/timer/Timer.cc.s
 .PHONY : src/timer/Timer.cc.s
 
 src/timer/TimerQueue.o: src/timer/TimerQueue.cc.o
@@ -1063,7 +1063,7 @@ src/timer/TimerQueue.o: src/timer/TimerQueue.cc.o
 
 # target to build an object file
 src/timer/TimerQueue.cc.o:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/timer/TimerQueue.cc.o
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/timer/TimerQueue.cc.o
 .PHONY : src/timer/TimerQueue.cc.o
 
 src/timer/TimerQueue.i: src/timer/TimerQueue.cc.i
@@ -1072,7 +1072,7 @@ src/timer/TimerQueue.i: src/timer/TimerQueue.cc.i
 
 # target to preprocess a source file
 src/timer/TimerQueue.cc.i:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/timer/TimerQueue.cc.i
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/timer/TimerQueue.cc.i
 .PHONY : src/timer/TimerQueue.cc.i
 
 src/timer/TimerQueue.s: src/timer/TimerQueue.cc.s
@@ -1081,7 +1081,7 @@ src/timer/TimerQueue.s: src/timer/TimerQueue.cc.s
 
 # target to generate assembly for a file
 src/timer/TimerQueue.cc.s:
-	$(MAKE) -f CMakeFiles/tiny_network.dir/build.make CMakeFiles/tiny_network.dir/src/timer/TimerQueue.cc.s
+	$(MAKE) -f CMakeFiles/tinyWebServer.dir/build.make CMakeFiles/tinyWebServer.dir/src/timer/TimerQueue.cc.s
 .PHONY : src/timer/TimerQueue.cc.s
 
 # Help Target
@@ -1092,11 +1092,11 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... edit_cache"
-	@echo "... tiny_network"
-	@echo "... install"
+	@echo "... tinyWebServer"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install/local"
+	@echo "... install"
 	@echo "... echoServerAsync"
 	@echo "... echoServer"
 	@echo "... HttpServer"

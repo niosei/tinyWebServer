@@ -90,7 +90,7 @@ AsyncLoggingTest_EXTERNAL_OBJECTS =
 
 ../src/logger/test/AsyncLoggingTest: src/logger/test/CMakeFiles/AsyncLoggingTest.dir/AsyncLoggingTest.cc.o
 ../src/logger/test/AsyncLoggingTest: src/logger/test/CMakeFiles/AsyncLoggingTest.dir/build.make
-../src/logger/test/AsyncLoggingTest: ../lib/libtiny_network.so
+../src/logger/test/AsyncLoggingTest: ../lib/libtinyWebServer.so
 ../src/logger/test/AsyncLoggingTest: src/logger/test/CMakeFiles/AsyncLoggingTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roushan/Project/tinyWebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../src/logger/test/AsyncLoggingTest"
 	cd /home/roushan/Project/tinyWebServer/build/src/logger/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AsyncLoggingTest.dir/link.txt --verbose=$(VERBOSE)
