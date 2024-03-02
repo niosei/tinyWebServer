@@ -5,11 +5,11 @@ Poller::Poller(EventLoop *Loop)
 {
 }
 
-// 判断channel是否在当前Poller中
+// 判断参数channel是否在当前poller当中
 bool Poller::hasChannel(Channel *channel) const
 {
-    // 通过channel的fd在map中查找
+    // 可以在map中找到该fd（键），并且it->second==channel（值）
     auto it = channels_.find(channel->fd());
-    // 如果找到了，判断是否是同一个channel
     return it != channels_.end() && it->second == channel;
 }
+
